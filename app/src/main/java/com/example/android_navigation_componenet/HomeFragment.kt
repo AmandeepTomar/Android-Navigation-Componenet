@@ -1,6 +1,7 @@
 package com.example.android_navigation_componenet
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.android_navigation_componenet.databinding.FragmentHomeBinding
+import kotlinx.android.synthetic.main.fragment_home.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,9 +48,18 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (arguments!=null){
+            val arg=HomeFragmentArgs.fromBundle(requireArguments())
+          val email=  arg.email
+           val pass= arg.password
+            Log.e("Email and Pass","Email IS $email and Pass is $pass")
+            txtEmail.text=email
+            txtPass.text=pass
+        }
         homeBinding.button.setOnClickListener {
-            val bundle= bundleOf(USER_INPUT  to homeBinding.editText.text.toString())
-            it.findNavController().navigate(R.id.action_homeFragment_to_secondFragment,bundle)
+            it.findNavController().navigate(R.id.action_homeFragment_to_secondFragment)
+
         }
     }
 

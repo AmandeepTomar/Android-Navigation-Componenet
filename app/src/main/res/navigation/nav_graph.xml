@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -17,10 +17,64 @@
             app:exitAnim="@anim/slide_in_right"
             app:popEnterAnim="@anim/slide_out_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.android_navigation_componenet.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.android_navigation_componenet.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment2"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right">
+        </action>
+
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment2"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_termsFragment"
+            app:destination="@id/termsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.android_navigation_componenet.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_termsFragment"
+            app:destination="@id/termsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.example.android_navigation_componenet.TermsFragment"
+        android:label="fragment_terms"
+        tools:layout="@layout/fragment_terms"
+        />
 </navigation>

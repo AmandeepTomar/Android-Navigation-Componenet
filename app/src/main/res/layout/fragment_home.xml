@@ -9,18 +9,26 @@
         android:padding="10dp"
         tools:context=".HomeFragment">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="0dp"
+       <TextView
+           android:id="@+id/txtEmail"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintVertical_bias="0.2"
+           android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+           tools:text="Email is : email@example.com"/>
+        <TextView
+            android:id="@+id/txtPass"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Enter Your Name"
-            android:inputType="textPersonName"
-            tools:text="Enter Yor Name "
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtEmail"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            tools:text="Email is : email@example.com"/>
 
         <Button
             android:id="@+id/button"
@@ -34,6 +42,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
